@@ -4,10 +4,16 @@ type firmware_file, file_type;
 type persist_file, file_type;
 
 type display_data_file, data_file_type, core_data_file_type, file_type;
-type pps_socket, file_type;
-type sysfs_graphics, sysfs_type, fs_type;
+
 type sysfs_battery_supply, sysfs_type, fs_type;
 type sysfs_usb_supply, sysfs_type, fs_type;
+
+type pps_socket, file_type;
+
+type sysfs_graphics, sysfs_type, fs_type;
+
+type sysfs_fod_hbm, sysfs_type, fs_type;
+type sysfs_fod_status, sysfs_type, fs_type;
 
 type camera_motor_device, file_type;
 
