@@ -24,3 +24,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="raphael"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+TARGET_GAPPS_ARCH := arm64
+
+$(call inherit-product, vendor/gapps/config.mk)
+$(call inherit-product, vendor/pixelstyle/config.mk)
