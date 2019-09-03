@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2019 The Android Open Source Illusion Project
+# Copyright (C) 2018-2019 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -19,7 +19,7 @@ TARGET_SCREEN_WIDTH := 1080
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aosip
+    $(LOCAL_PATH)/overlay-lineage
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
@@ -27,7 +27,8 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default
+    audio.a2dp.default \
+    tinymix
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
@@ -60,7 +61,7 @@ PRODUCT_PACKAGES += \
     lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_raphael
 
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+    vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -90,9 +91,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_raphael
 
-# Power
+# Livedisplay
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service
+    lineage.livedisplay@2.0-service-sdm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -140,6 +141,10 @@ PRODUCT_BOOT_JARS += \
 # TextClassifier
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
+
+# Trust HAL
+PRODUCT_PACKAGES += \
+    lineage.trust@1.0-service
 
 # VNDK-SP
 PRODUCT_PACKAGES += \
